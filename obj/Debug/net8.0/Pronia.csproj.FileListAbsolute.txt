@@ -128,3 +128,4 @@ C:\Backend\Pronia\obj\Debug\net8.0\refint\Pronia.dll
 C:\Backend\Pronia\obj\Debug\net8.0\Pronia.pdb
 C:\Backend\Pronia\obj\Debug\net8.0\Pronia.genruntimeconfig.cache
 C:\Backend\Pronia\obj\Debug\net8.0\ref\Pronia.dll
+C:\Backend\Pronia\obj\Debug\net8.0\Pronia.sourcelink.json

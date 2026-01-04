@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pronia.DAL;
 using Pronia.Models;
+using Pronia.ViewModels;
 
 namespace Pronia.Controllers
 {
@@ -19,8 +20,16 @@ namespace Pronia.Controllers
 
         public async Task<IActionResult> Index()
         {
+            var categories = await _context.categories.Include(c => c.Products).ToListAsync();
             var sliders = await _context.sliders.ToListAsync();
-            return View(sliders);
+
+            var model = new HomeVM
+            {
+                Categories = categories,
+                Sliders = sliders
+            };
+
+            return View(model); 
         }
 
         public IActionResult Privacy()
