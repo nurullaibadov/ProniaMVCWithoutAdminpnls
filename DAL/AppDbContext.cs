@@ -11,12 +11,17 @@ namespace Pronia.DAL
 
 
         public DbSet<Slider> sliders { get; set; }      
-
-
+        public DbSet<Category> categories { get; set;  }
+        public DbSet<Product> products { get; set;  }           
+             
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-        }
 
+            modelBuilder.Entity<Category>()
+                .HasMany(c => c.Products)
+                .WithOne(x => x.Category)
+                .HasForeignKey(a => a.CategoryId);
+        }
     }
 }
